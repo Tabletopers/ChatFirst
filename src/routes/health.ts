@@ -4,7 +4,7 @@ import { logger } from '../utils/logger';
 
 const router = Router();
 
-router.get('/health', (_req, res) => {
+router.get('/', (_req, res) => {
   const health = {
     status: 'healthy',
     timestamp: new Date().toISOString(),
