@@ -67,7 +67,7 @@ class AIService {
         return response.choices[0]?.message?.content || 'I apologize, but I could not generate a response.';
       }
 
-      throw new Error('No AI provider configured');
+      return 'I\'m not configured with an AI provider yet. Please add an OpenAI or Groq API key to enable chat responses.';
     } catch (error) {
       logger.error({ error, provider }, 'AI request failed');
       if (this.fallbackClient && provider !== 'groq') {
